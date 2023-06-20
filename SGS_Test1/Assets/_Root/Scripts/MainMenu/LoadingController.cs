@@ -53,5 +53,10 @@ namespace MainMenu
                 yield return null;
             }
         }
+        
+        protected override void OnDispose()
+        {
+            _corotinesController.StopCoroutines(_coroutine);
+        }
     }
 }

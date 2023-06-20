@@ -9,6 +9,13 @@
 /SGS_Test1/[Bb]uilds/
 /SGS_Test1/[Ll]ogs/
 /SGS_Test1/[Uu]ser[Ss]ettings/
+/SGS_Test2/[Ll]ibrary/
+/SGS_Test2/[Tt]emp/
+/SGS_Test2/[Oo]bj/
+/SGS_Test2/[Bb]uild/
+/SGS_Test2/[Bb]uilds/
+/SGS_Test2/[Ll]ogs/
+/SGS_Test2/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data

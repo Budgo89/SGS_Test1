@@ -21,6 +21,5 @@ namespace MonoBehaviours
         {
             Destroy(gameObject);
         }
-        
     }
 }

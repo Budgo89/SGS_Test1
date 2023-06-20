@@ -29,7 +29,7 @@ namespace MainMenu
         
         private void OnDestroy()
         {
-            _mainController.Dispose();
+            _mainController?.Dispose();
         }
     }
 }

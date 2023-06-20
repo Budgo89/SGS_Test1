@@ -42,7 +42,6 @@ namespace MainMenu
                 case GameState.Loading:
                     _loadingController = new LoadingController(_profilePlayer,_mainMenuView, _corotinesController, _sceneTitles.GalleryScene);
                     break;
-
             }
         }
 

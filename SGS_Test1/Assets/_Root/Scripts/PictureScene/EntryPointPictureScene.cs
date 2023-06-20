@@ -28,4 +28,9 @@ public class EntryPointPictureScene : MonoBehaviour
         _savePictureScene = FindObjectOfType<SavePictureScene>();
         _pictureSceneController = new PictureSceneController(_profilePlayer, _placeForUi, _addressPrefabs, _sceneTitles, _corotinesController, _savePictureScene);
     }
+    
+    private void OnDestroy()
+    {
+        _pictureSceneController?.Dispose();
+    }
 }

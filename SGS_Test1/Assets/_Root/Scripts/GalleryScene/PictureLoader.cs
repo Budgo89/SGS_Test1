@@ -14,7 +14,7 @@ namespace GalleryScene
             {
                 var open = request.SendWebRequest();
                 while (open.isDone == false)
-                    await Task.Delay(1000/30);
+                    await Task.Delay(100);
 
                 if (request.isNetworkError || request.isHttpError)
                 {

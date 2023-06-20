@@ -9,7 +9,6 @@ namespace GalleryScene
 {
     public class LoadingGalleryController : BaseController
     {
-        private readonly ProfilePlayers _profilePlayer;
         private readonly GalleryView _galleryView;
         private readonly CorotinesController _corotinesController;
         private readonly string _sceneTitles;
@@ -18,10 +17,8 @@ namespace GalleryScene
         private GameObject _scrollView;
         private Coroutine _coroutine;
 
-        public LoadingGalleryController(ProfilePlayers profilePlayer, GalleryView galleryView, CorotinesController corotinesController, 
-            string sceneTitles)
+        public LoadingGalleryController(GalleryView galleryView, CorotinesController corotinesController, string sceneTitles)
         {
-            _profilePlayer = profilePlayer;
             _galleryView = galleryView;
             _corotinesController = corotinesController;
             _sceneTitles = sceneTitles;
@@ -54,6 +51,11 @@ namespace GalleryScene
                 _progressBar.value = asyncLoad.progress;
                 yield return null;
             }
+        }
+        
+        protected override void OnDispose()
+        {
+            _corotinesController.StopCoroutines(_coroutine);
         }
     }
 }

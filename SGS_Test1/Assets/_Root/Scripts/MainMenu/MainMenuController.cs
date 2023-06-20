@@ -40,6 +40,5 @@ namespace MainMenu
         {
             _galleryButton.onClick.RemoveAllListeners();
         }
-        
     }
 }

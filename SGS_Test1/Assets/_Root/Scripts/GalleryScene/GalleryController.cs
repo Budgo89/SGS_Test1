@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Controllers;
 using Models;
 using MonoBehaviours;
@@ -12,6 +13,7 @@ namespace GalleryScene
     public class GalleryController: BaseController
     {
         private const int Counts = 66;
+        private const int StartCounts = 6;
         
         private readonly ResourcePath _resourcePath;
         private readonly ProfilePlayers _profilePlayer;

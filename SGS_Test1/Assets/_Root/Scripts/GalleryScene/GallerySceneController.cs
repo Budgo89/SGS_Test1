@@ -53,7 +53,7 @@ namespace GalleryScene
                     _galleryController = new GalleryController(_profilePlayer, _galleryView, _addressContentImage, _url, _mainCamera, _savePictureScene );
                     break;
                 case GameState.Loading:
-                    _loadingGalleryController = new LoadingGalleryController(_profilePlayer,_galleryView, _corotinesController, _sceneTitles.PictureScene);
+                    _loadingGalleryController = new LoadingGalleryController(_galleryView, _corotinesController, _sceneTitles.PictureScene);
                     break;
             }
         }
