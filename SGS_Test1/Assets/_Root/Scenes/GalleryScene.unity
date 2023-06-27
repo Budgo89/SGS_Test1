@@ -275,14 +275,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _orientation: 1
   _placeForUi: {fileID: 1140722371}
-  _addressPrefabs: Prefabs/Gallery
-  _addressContentImage: Prefabs/ContentImage
-  _addressSavePicture: Prefabs/SavePictureScene
+  _addressPrefabsGallery: {fileID: 11400000, guid: 4f47202bc5da4134b8b28bc074b579c1, type: 2}
   _sceneTitles: {fileID: 11400000, guid: f27b85d519afa1444945a8dc2b1af332, type: 2}
   _corotinesController: {fileID: 1185731388}
   _url: http://data.ikppbb.com/test-task-unity-data/pics/
   _mainCamera: {fileID: 415011716}
-  _savePictureScene: {fileID: 0}
 --- !u!4 &1185731387
 Transform:
   m_ObjectHideFlags: 0

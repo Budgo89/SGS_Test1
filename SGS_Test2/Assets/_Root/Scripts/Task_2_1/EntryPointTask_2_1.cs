@@ -17,6 +17,7 @@ namespace Task_2_1
         private ProfilePlayers _profilePlayer;
         private Task_2_1MainController _task_2_1MainController;
 
+        
         void Start()
         {
             Screen.orientation = _orientation;

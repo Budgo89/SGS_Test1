@@ -13,6 +13,7 @@ namespace MainMenu
         private Button _task_2_2;
         private Button _task_2_3;
 
+        
         public MainMenuController(ProfilePlayers profilePlayer, MainMenuView mainMenuView)
         {
             _profilePlayer = profilePlayer;
@@ -42,14 +43,14 @@ namespace MainMenu
             _task_2_3 = _mainMenuView.Task_2_3;
         }
         
-        protected override void OnDispose()
-        {
-            DisposeControllers();
-        }
-
         private void DisposeControllers()
         {
             _task_2_1.onClick.RemoveAllListeners();
+        }
+        
+        protected override void OnDispose()
+        {
+            DisposeControllers();
         }
     }
 }

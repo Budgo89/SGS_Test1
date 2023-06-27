@@ -9,6 +9,7 @@ namespace Task_2_3
         private readonly Vector3 _cameraPosition;
         private Camera _camera;
 
+        
         public CameraController(GameObject plaers, Vector3 cameraPosition)
         {
             _plaers = plaers;

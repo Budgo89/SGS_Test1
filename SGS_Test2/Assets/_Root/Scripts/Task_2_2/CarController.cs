@@ -26,6 +26,7 @@ namespace Task_2_2
         
         private bool _isSpeed = false;
         private bool _isRotation = false;
+        
 
         public CarController(Task_2_2MenuController task_2_2MenuController, CarConfigController carConfigController, GameObject plaers)
         {

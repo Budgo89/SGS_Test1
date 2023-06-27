@@ -45,8 +45,6 @@ namespace Controllers
             {
                 Object.Destroy(gameObject);
             }
-                
-
             _gameObjects.Clear();
         }
 

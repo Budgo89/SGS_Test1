@@ -32,15 +32,15 @@ namespace Task_2_3
         {
             _menuTask_2Button = _menuTask2View.MenuTask_2_1Button;
         }
-        
-        protected override void OnDispose()
-        {
-            DisposeControllers();
-        }
 
         private void DisposeControllers()
         {
             _menuTask_2Button.onClick.RemoveAllListeners();
+        }
+        
+        protected override void OnDispose()
+        {
+            DisposeControllers();
         }
     }
 }

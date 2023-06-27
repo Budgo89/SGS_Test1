@@ -11,6 +11,7 @@ namespace MainMenu
         
         private Button _galleryButton;
 
+        
         public MainMenuController(ProfilePlayers profilePlayer, MainMenuView mainMenuView)
         {
             _profilePlayer = profilePlayer;
@@ -31,6 +32,7 @@ namespace MainMenu
         {
             _galleryButton = _mainMenuView.GalleryButton;
         }
+        
         protected override void OnDispose()
         {
             DisposeControllers();

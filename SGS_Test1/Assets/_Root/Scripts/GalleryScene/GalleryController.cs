@@ -4,6 +4,7 @@ using Controllers;
 using Models;
 using MonoBehaviours;
 using Profile;
+using ScriptableObjects;
 using Tool;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -13,7 +14,6 @@ namespace GalleryScene
     public class GalleryController: BaseController
     {
         private const int Counts = 66;
-        private const int StartCounts = 6;
         
         private readonly ResourcePath _resourcePath;
         private readonly ProfilePlayers _profilePlayer;
@@ -26,7 +26,8 @@ namespace GalleryScene
 
         private PictureLoader _pictureLoader = new PictureLoader();
 
-        public GalleryController(ProfilePlayers profilePlayer, GalleryView galleryView, string addressContentImage,
+        
+        public GalleryController(ProfilePlayers profilePlayer, GalleryView galleryView, AddressPrefabsGallery _addressPrefabsGallery,
             string url, Camera mainCamera, SavePictureScene savePictureScene)
         {
             _profilePlayer = profilePlayer;
@@ -34,7 +35,7 @@ namespace GalleryScene
             _url = url;
             _mainCamera = mainCamera;
             _savePictureScene = savePictureScene;
-            _resourcePath = new ResourcePath(addressContentImage);
+            _resourcePath = new ResourcePath(_addressPrefabsGallery.AddressContentImage);
             AddContent();
             SubscribeButton();
         }

@@ -19,11 +19,12 @@ namespace Task_2_1
         
         private Task_2_1MenuController _task_2_1MenuController;
         private Task_2_1RotationalController _rotationalController;
-        private TouchController _touchController;
+        private IСontrolController _touchСontrolController;
         private ColorController _colorController;
 
         private CubeView _cubeView;
 
+        
         public Task_2_1MainController(ProfilePlayers profilePlayer, Transform placeForUi, SceneTitles sceneTitles, Task_2_1AddressPrefabs task21AddressPrefabs)
         {
             _profilePlayer = profilePlayer;
@@ -55,26 +56,29 @@ namespace Task_2_1
                 case GameState.Task_2_1:
                     _task_2_1MenuController = new Task_2_1MenuController(_profilePlayer,_placeForUi,_task21AddressPrefabs);
                     _rotationalController = new Task_2_1RotationalController(_cubeView);
+#if UNITY_EDITOR
+                    _touchСontrolController = new MouseСontrolController();
+#else
                     _touchController = new TouchController();
-                    _colorController = new ColorController(_touchController, _cubeView);
+#endif
+                    _colorController = new ColorController(_touchСontrolController, _cubeView);
                     break;
                 case GameState.Menu:
                     SceneManager.LoadSceneAsync(_sceneTitles.MainMenuScene);
                     break;
-                    
             }
         }
 
         public void UpData()
         {
             _rotationalController.UpData();
-            _touchController.UpData();
+            _touchСontrolController.UpData();
         }
         private void DisposeControllers()
         {
             _task_2_1MenuController?.Dispose();
             _rotationalController?.Dispose();
-            _touchController?.Dispose();
+            _touchСontrolController?.Dispose();
             _colorController?.Dispose();
         }
         

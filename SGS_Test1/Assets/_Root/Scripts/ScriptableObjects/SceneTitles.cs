@@ -2,7 +2,7 @@
 
 namespace ScriptableObjects
 {
-    [CreateAssetMenu(fileName = "Scene Titles", menuName = "SceneManager", order = 51)]
+    [CreateAssetMenu(fileName = "Scene Titles", menuName = "SGS/SceneManager", order = 51)]
     public class SceneTitles : ScriptableObject
     {
         [SerializeField] private string _mainMenuScene = "MainMenu";

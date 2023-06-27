@@ -8,20 +8,22 @@ namespace Task_2_1
 {
     public class ColorController : BaseController
     {
-        private readonly TouchController _touchController;
+        private readonly IСontrolController _touchСontrolController;
         private Material _color;
         private Random _random;
         
-        private Action _touchAction;
-        public ColorController(TouchController touchController, CubeView cubeView)
+        private EventHandler _touchAction;
+        
+        
+        public ColorController(IСontrolController touchСontrolController, CubeView cubeView)
         {
-            _touchController = touchController;
+            _touchСontrolController = touchСontrolController;
             _color = cubeView.GetComponent<Renderer>().material;
             _random = new Random();
-            _touchAction = _touchController.Touch += TouchAction;
+            _touchСontrolController.Touch += TouchСontrolAction;
         }
 
-        private void TouchAction()
+        private void TouchСontrolAction(object sender, EventArgs e)
         {
             var red = _random.Next(0, 255)/255f;
             var green = _random.Next(0, 255)/255f;
@@ -31,14 +33,9 @@ namespace Task_2_1
             _color.color = color;
         }
         
-        private void DisposeControllers()
-        {
-            _touchAction = _touchController.Touch -= TouchAction;
-        }
-        
         protected override void OnDispose()
         {
-            DisposeControllers();
+            _touchСontrolController.Touch -= TouchСontrolAction;
         }
     }
 }

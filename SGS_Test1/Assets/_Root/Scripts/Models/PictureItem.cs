@@ -13,6 +13,7 @@ namespace Models
         private RectTransform _rectTransform;
         private bool _isPictureLoader = false;
 
+        
         public PictureItem(int id, string url, ContentImageView contentImageView)
         {
             _id = id;

@@ -17,6 +17,7 @@ namespace MainMenu
         private ProfilePlayers _profilePlayer;
         private MainController _mainController;
         
+        
         void Start()
         {
             Screen.orientation = _orientation;

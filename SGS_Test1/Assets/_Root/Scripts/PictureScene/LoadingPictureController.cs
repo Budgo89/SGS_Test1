@@ -16,6 +16,7 @@ namespace PictureScene
         private GameObject _pictureGameObject;
         private Coroutine _coroutine;
 
+        
         public LoadingPictureController(PictureSceneView pictureSceneView, CorotinesController corotinesController, string sceneTitles)
         {
             _pictureSceneView = pictureSceneView;

@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41a71c07a3924f7ca676bcfa8b2a1d29, type: 3}
-  m_Name: CarConfigController
+  m_Script: {fileID: 11500000, guid: 9d17c9e38c9d40d691565ce6937db3bc, type: 3}
+  m_Name: AddressPrefabsGallery
   m_EditorClassIdentifier: 
-  _moveSpeed: 5
-  _rotation: 0.1
-  _moveSpeedMax: 60
-  _moveSpeedMin: -20
-  _rotationMax: 0.3
+  _addressPrefabs: Prefabs/Gallery
+  _addressContentImage: Prefabs/ContentImage
+  _addressSavePicture: Prefabs/SavePictureScene

@@ -1,7 +1,6 @@
 ﻿using Controllers;
 using Profile;
 using ScriptableObjects;
-using Task_2_1;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,6 +17,7 @@ namespace Task_2_2
 
         private Task_2_2MenuController _task_2_2MenuController;
         private CarController _carController;
+        
 
         public Task_2_2MainController(ProfilePlayers profilePlayer, Transform placeForUi, SceneTitles sceneTitles,
             Task_2_2AddressPrefabs task_2_2AddressPrefabs, CarConfigController carConfigController, GameObject plaers)

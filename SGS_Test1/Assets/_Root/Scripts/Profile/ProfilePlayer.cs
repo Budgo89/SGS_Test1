@@ -6,6 +6,7 @@ namespace Profile
     {
         public readonly SubscriptionProperty<GameState> CurrentState;
 
+        
         public ProfilePlayers(GameState initialState)
         {
             CurrentState = new SubscriptionProperty<GameState>(initialState);

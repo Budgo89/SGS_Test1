@@ -20,6 +20,7 @@ namespace PictureScene
         private PictureController _pictureController;
         private LoadingPictureController _loadingPictureController;
 
+        
         public PictureSceneController(ProfilePlayers profilePlayer, Transform placeForUi, string addressPrefabs, SceneTitles sceneTitles, 
             CorotinesController corotinesController, SavePictureScene savePictureScene)
         {
@@ -49,13 +50,6 @@ namespace PictureScene
             }
         }
 
-        private void DisposeControllers()
-        {
-            _loadingPictureController?.Dispose();
-            _pictureController?.Dispose();
-        
-        }
-
         private PictureSceneView LoadView(Transform placeForUi)
         {
             GameObject prefab = ResourcesLoader.LoadPrefab(_resourcePath);
@@ -63,6 +57,18 @@ namespace PictureScene
             AddGameObject(objectView);
             
             return objectView.GetComponent<PictureSceneView>();
+        }
+
+        private void DisposeControllers()
+        {
+            _loadingPictureController?.Dispose();
+            _pictureController?.Dispose();
+        
+        }
+        
+        protected override void OnDispose()
+        {
+            DisposeControllers();
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Task_2_1
 
         private MenuTask_2View _menuTask2View;
         private Button _menuTask_2Button;
+        
 
         public Task_2_1MenuController(ProfilePlayers profilePlayer, Transform placeForUi, Task_2_1AddressPrefabs task21AddressPrefabs)
         {

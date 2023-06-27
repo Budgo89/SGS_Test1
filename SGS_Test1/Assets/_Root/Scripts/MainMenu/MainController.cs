@@ -18,6 +18,7 @@ namespace MainMenu
         private MainMenuController _mainMenuController;
         private LoadingController _loadingController;
 
+        
         public MainController(ProfilePlayers profilePlayer, string addressPrefabs, Transform placeForUi, SceneTitles sceneTitles, CorotinesController corotinesController)
         {
             _profilePlayer = profilePlayer;

@@ -12,12 +12,11 @@ namespace GalleryScene
         private readonly ResourcePath _resourcePath;
 
         private readonly ProfilePlayers _profilePlayer;
-        private readonly string _addressContentImage;
+        private readonly AddressPrefabsGallery _addressPrefabsGallery;
         private readonly SceneTitles _sceneTitles;
         private readonly CorotinesController _corotinesController;
         private readonly string _url;
         private readonly SavePictureScene _savePictureScene;
-        private readonly string _addressSavePicture;
         private readonly Camera _mainCamera;
 
         private GalleryView _galleryView;
@@ -26,18 +25,18 @@ namespace GalleryScene
         private LoadingGalleryController _loadingGalleryController;
         
 
-        public GallerySceneController(ProfilePlayers profilePlayer, string addressPrefabs, string addressContentImage,
+        public GallerySceneController(ProfilePlayers profilePlayer, AddressPrefabsGallery addressPrefabsGallery,
             Transform placeForUi, SceneTitles sceneTitles, CorotinesController corotinesController, string url, Camera _mainCamera,
             SavePictureScene savePictureScene)
         {
             _profilePlayer = profilePlayer;
-            _addressContentImage = addressContentImage;
+            _addressPrefabsGallery = addressPrefabsGallery;
             _sceneTitles = sceneTitles;
             _corotinesController = corotinesController;
             _url = url;
             _savePictureScene = savePictureScene;
 
-            _resourcePath = new ResourcePath(addressPrefabs);
+            _resourcePath = new ResourcePath(_addressPrefabsGallery.AddressPrefabs);
             _galleryView = LoadView(placeForUi);
             
             profilePlayer.CurrentState.SubscribeOnChange(OnChangeGameState);
@@ -50,7 +49,7 @@ namespace GalleryScene
             switch (state)
             {
                 case GameState.Menu:
-                    _galleryController = new GalleryController(_profilePlayer, _galleryView, _addressContentImage, _url, _mainCamera, _savePictureScene );
+                    _galleryController = new GalleryController(_profilePlayer, _galleryView, _addressPrefabsGallery, _url, _mainCamera, _savePictureScene );
                     break;
                 case GameState.Loading:
                     _loadingGalleryController = new LoadingGalleryController(_galleryView, _corotinesController, _sceneTitles.PictureScene);

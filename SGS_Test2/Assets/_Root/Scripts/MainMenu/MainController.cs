@@ -17,6 +17,7 @@ namespace MainMenu
         private MainMenuView _mainMenuView;
         private MainMenuController _mainMenuController;
 
+        
         public MainController(ProfilePlayers profilePlayer, Transform placeForUi, SceneTitles sceneTitles, MainMenuAddressPrefabs mainMenuAddressPrefabs)
         {
             _profilePlayer = profilePlayer;

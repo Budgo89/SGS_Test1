@@ -21,6 +21,7 @@ public class EntryPointPictureScene : MonoBehaviour
     private SavePictureScene _savePictureScene;
     private PictureSceneController _pictureSceneController;
 
+    
     private void Start()
     {
         Screen.orientation = _orientation;

@@ -9,6 +9,7 @@ namespace Task_2_1
         private GameObject _cube;
         private float _speedRotational;
         private Transform _transform;
+        
 
         public Task_2_1RotationalController(CubeView cubeView)
         {

@@ -30,17 +30,17 @@ namespace Task_2_3
             _profilePlayer = new ProfilePlayers(GameState.Task_2_3);
             _task_2_3MainController = new Task_2_3MainController(_profilePlayer, _placeForUi, _sceneTitles, _task_2_3AddressPrefabs, _playerConfigController, _plaers, _cameraPosition);
         }
+        
+        private void Update()
+        {
+            _task_2_3MainController?.UpDate();
+        }
 
         private void FixedUpdate()
         {
             _task_2_3MainController?.FixedUpdate();
         }
 
-        private void Update()
-        {
-            _task_2_3MainController?.UpDate();
-        }
-        
         private void OnDestroy()
         {
             _task_2_3MainController?.Dispose();

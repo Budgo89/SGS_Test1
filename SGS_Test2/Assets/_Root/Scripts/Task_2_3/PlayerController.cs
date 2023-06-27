@@ -107,16 +107,15 @@ namespace Task_2_3
             return false;
         }
 
-
-        protected override void OnDispose()
-        {
-            DisposeControllers();
-        }
-
         private void DisposeControllers()
         {
             _attackButton.onClick.RemoveAllListeners();
             _jumpButton.onClick.RemoveAllListeners();
+        }
+
+        protected override void OnDispose()
+        {
+            DisposeControllers();
         }
     }
 }

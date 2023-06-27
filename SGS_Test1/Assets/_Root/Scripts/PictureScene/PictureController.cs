@@ -14,6 +14,7 @@ namespace PictureScene
         private Button _buttonNext;
         private Image _picture;
 
+        
         public PictureController(ProfilePlayers profilePlayer, PictureSceneView pictureSceneView, SavePictureScene savePictureScene)
         {
             _profilePlayer = profilePlayer;
@@ -41,15 +42,15 @@ namespace PictureScene
             _picture = _pictureSceneView.Picture;
             _picture.sprite = _savePictureScene.Picture;
         }
-        
-        protected override void OnDispose()
-        {
-            DisposeControllers();
-        }
 
         private void DisposeControllers()
         {
             _buttonNext.onClick.AddListener(OnButtonNextClick);
+        }
+        
+        protected override void OnDispose()
+        {
+            DisposeControllers();
         }
     }
 }

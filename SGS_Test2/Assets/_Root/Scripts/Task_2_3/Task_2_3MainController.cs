@@ -1,7 +1,6 @@
 ﻿using Controllers;
 using Profile;
 using ScriptableObjects;
-using Task_2_1;
 using Tool;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -44,11 +43,6 @@ namespace Task_2_3
             profilePlayer.CurrentState.SubscribeOnChange(OnChangeGameState);
             OnChangeGameState(_profilePlayer.CurrentState.Value);
         }
-
-        public void FixedUpdate()
-        {
-            _playerController.FixedUpdate();
-        }
         
         private void OnChangeGameState(GameState state)
         {
@@ -65,16 +59,15 @@ namespace Task_2_3
                     break;
             }
         }
-        
-        private void DisposeControllers()
+
+        public void UpDate()
         {
-            _task_2_3MenuController?.Dispose();
-            _playerController?.Dispose();
+            _cameraController.UpDate();
         }
-        
-        protected override void OnDispose()
+
+        public void FixedUpdate()
         {
-            DisposeControllers();
+            _playerController.FixedUpdate();
         }
         
         private MenuTask_2View LoadMenuView(Transform placeForUi)
@@ -93,10 +86,16 @@ namespace Task_2_3
             
             return objectView.GetComponent<ControllerView>();
         }
-
-        public void UpDate()
+        
+        private void DisposeControllers()
         {
-            _cameraController.UpDate();
+            _task_2_3MenuController?.Dispose();
+            _playerController?.Dispose();
+        }
+        
+        protected override void OnDispose()
+        {
+            DisposeControllers();
         }
     }
 }

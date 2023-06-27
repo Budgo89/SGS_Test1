@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using Controllers;
-using Profile;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,6 +16,7 @@ namespace GalleryScene
         private GameObject _scrollView;
         private Coroutine _coroutine;
 
+        
         public LoadingGalleryController(GalleryView galleryView, CorotinesController corotinesController, string sceneTitles)
         {
             _galleryView = galleryView;
@@ -42,6 +42,7 @@ namespace GalleryScene
             
             _coroutine =_corotinesController.StartCoroutines(LoadAsync());
         }
+        
         IEnumerator LoadAsync()
         {
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(_sceneTitles);

@@ -17,6 +17,7 @@ namespace MainMenu
         private MainMenuView _mainMenuView;
         private Coroutine _coroutine;
 
+        
         public LoadingController(ProfilePlayers profilePlayer, MainMenuView mainMenuView, CorotinesController corotinesController, string sceneTitles)
         {
             _profilePlayer = profilePlayer;
