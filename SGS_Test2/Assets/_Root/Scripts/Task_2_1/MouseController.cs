@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Task_2_1
 {
-    public class MouseСontrolController : BaseController, IСontrolController
+    public class MouseController : BaseController, IСontrolController
     {
         public event EventHandler Touch;
         

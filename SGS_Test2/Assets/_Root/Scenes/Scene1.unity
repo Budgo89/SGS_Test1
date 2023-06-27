@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3abf0402aa4ae486010923e4752d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _orientation: 1
+  _orientation: 3
   _sceneTitles: {fileID: 11400000, guid: a76c05f28e4ee7c4a913f41520a660ca, type: 2}
   _task_2_1AddressPrefabs: {fileID: 11400000, guid: c6cd7236a91cb644082aea9fc1954470, type: 2}
   _placeForUi: {fileID: 1560307657}

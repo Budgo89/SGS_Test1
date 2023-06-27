@@ -57,7 +57,7 @@ namespace Task_2_1
                     _task_2_1MenuController = new Task_2_1MenuController(_profilePlayer,_placeForUi,_task21AddressPrefabs);
                     _rotationalController = new Task_2_1RotationalController(_cubeView);
 #if UNITY_EDITOR
-                    _touchСontrolController = new MouseСontrolController();
+                    _touchСontrolController = new MouseController();
 #else
                     _touchController = new TouchController();
 #endif

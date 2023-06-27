@@ -1336,7 +1336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 430989608deb40788a3165a639a99ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _orientation: 1
+  _orientation: 3
   _sceneTitles: {fileID: 11400000, guid: a76c05f28e4ee7c4a913f41520a660ca, type: 2}
   _task_2_2AddressPrefabs: {fileID: 11400000, guid: 6cd42c3a4b23d7740a8ca4c567960c3a, type: 2}
   _carConfigController: {fileID: 11400000, guid: 1d735dcf098d436459f5c4fedcdf263e, type: 2}

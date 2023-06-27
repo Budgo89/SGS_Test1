@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Task_2_1
 {
-    public class TouchСontrolController : BaseController, IСontrolController
+    public class TouchController : BaseController, IСontrolController
     {
         public event EventHandler Touch;
         
@@ -16,12 +16,6 @@ namespace Task_2_1
                 if (Input.GetTouch(0).phase == TouchPhase.Began)
                     TouchAction();
             }
-#if UNITY_EDITOR
-            if (Input.GetMouseButtonDown(0))
-            {
-                TouchAction();
-            }
-#endif
         }
 
         private void TouchAction()
