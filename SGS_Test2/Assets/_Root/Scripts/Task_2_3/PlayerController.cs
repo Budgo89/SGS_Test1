@@ -60,7 +60,10 @@ namespace Task_2_3
 
         private void OnAttackButtonClick()
         {
-            _animator.SetBool("attack", true);
+            if (_joystick.Horizontal > 0 || _joystick.Vertical > 0)
+                _animator.SetBool("WalkAttack", true);
+            else
+                _animator.SetBool("attack", true);
         }
 
         private void AddButton()
@@ -96,6 +99,10 @@ namespace Task_2_3
             if (IsAnimationAttack("Draw Arrow"))
             {
                 _animator.SetBool("attack", false);
+            }
+            if (IsAnimationAttack("Aim Walk Forward"))
+            {
+                _animator.SetBool("WalkAttack", false);
             }
         }
 

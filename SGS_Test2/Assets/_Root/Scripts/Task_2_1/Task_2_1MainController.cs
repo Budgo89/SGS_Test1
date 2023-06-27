@@ -19,7 +19,7 @@ namespace Task_2_1
         
         private Task_2_1MenuController _task_2_1MenuController;
         private Task_2_1RotationalController _rotationalController;
-        private IСontrolController _touchСontrolController;
+        private IСontrolController _touchController;
         private ColorController _colorController;
 
         private CubeView _cubeView;
@@ -57,11 +57,11 @@ namespace Task_2_1
                     _task_2_1MenuController = new Task_2_1MenuController(_profilePlayer,_placeForUi,_task21AddressPrefabs);
                     _rotationalController = new Task_2_1RotationalController(_cubeView);
 #if UNITY_EDITOR
-                    _touchСontrolController = new MouseController();
+                    _touchController = new MouseController();
 #else
                     _touchController = new TouchController();
 #endif
-                    _colorController = new ColorController(_touchСontrolController, _cubeView);
+                    _colorController = new ColorController(_touchController, _cubeView);
                     break;
                 case GameState.Menu:
                     SceneManager.LoadSceneAsync(_sceneTitles.MainMenuScene);
@@ -72,13 +72,13 @@ namespace Task_2_1
         public void UpData()
         {
             _rotationalController.UpData();
-            _touchСontrolController.UpData();
+            _touchController.UpData();
         }
         private void DisposeControllers()
         {
             _task_2_1MenuController?.Dispose();
             _rotationalController?.Dispose();
-            _touchСontrolController?.Dispose();
+            _touchController?.Dispose();
             _colorController?.Dispose();
         }
         
