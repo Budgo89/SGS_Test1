@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CarConfigController
   m_EditorClassIdentifier: 
   _moveSpeed: 5
-  _rotation: 0.1
+  _rotation: 0.2
   _moveSpeedMax: 60
   _moveSpeedMin: -20
   _rotationMax: 0.3
