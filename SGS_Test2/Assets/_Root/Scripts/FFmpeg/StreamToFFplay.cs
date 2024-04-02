@@ -76,12 +76,16 @@ public class StreamToFFplay : MonoBehaviour
             RedirectStandardOutput = true,
             RedirectStandardError = true
         };
-
+        
         using (var ffmpegProcess = Process.Start(startInfo))
         {
-            ffmpegProcess.WaitForExit();
+            ffmpegProcess.EnableRaisingEvents = true;
+            ffmpegProcess.Exited += (sender, args) =>
+            {
+                ffmpegProcess.WaitForExit();
+                ffmpegProcess.Dispose();
+                File.Delete(imagePath);
+            };
         }
-        
-        File.Delete(imagePath);
     }
 }
