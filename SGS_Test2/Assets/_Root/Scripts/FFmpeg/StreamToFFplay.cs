@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Diagnostics;
 using System.IO;
@@ -16,7 +17,6 @@ public class StreamToFFplay : MonoBehaviour
 
     private const string FileName = "temp_frame.png";
 
-    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.S))
@@ -26,7 +26,7 @@ public class StreamToFFplay : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.X))
         {
-            StartCoroutine(CaptureFramesCoroutine());
+            StopCoroutine(CaptureFramesCoroutine());
         }
     }
 
@@ -83,8 +83,8 @@ public class StreamToFFplay : MonoBehaviour
             ffmpegProcess.Exited += (sender, args) =>
             {
                 ffmpegProcess.WaitForExit();
-                ffmpegProcess.Dispose();
                 File.Delete(imagePath);
+                ffmpegProcess.Dispose();
             };
         }
     }
